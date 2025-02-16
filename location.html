@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Location - PrintLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #main-content {
+      position: relative;
+      z-index: 1;
+    }
+    .bg-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('images/location.jpg') center center / cover no-repeat fixed;
+      opacity: 0.3;
+      z-index: -1; /* Behind content */
+    }
+    .map-container {
+      height: 80%;
+      min-height: 400px;
+    }
+  </style>
+</head>
+<body>
+<div id="page-container">
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('navbar-placeholder').innerHTML = data; })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <div id="main-content" class="container-fluid p-0" style="min-height: 80vh;">
+    <div class="bg-image"></div>
+
+    <div class="row no-gutters full-height">
+      <div class="col-md-6 d-flex align-items-center justify-content-center full-height">
+        <div class="map-container">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d595.3975862953802!2d-75.67902287794561!3d45.41960038039164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cce05a74fac7013%3A0x347e8ee96695c601!2sSite%20-%20Faculty%20of%20Engineering!5e0!3m2!1sen!2sca!4v1739672043338!5m2!1sen!2sca"
+                  width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex flex-column justify-content-center p-4 full-height location-text">
+        <h2>Visit Our Workshop</h2>
+        <p>
+          We welcome visitors and local customers! Whether you’re dropping off a file or picking up your finished print, here’s everything you need to know about finding us.
+        </p>
+        <h5 class="mt-4">123 Innovation Road</h5>
+        <h5>Ottawa, K1N 5Y5</h5>
+        <p class="mt-4">
+          <strong>Hours of Operation:</strong><br>
+          Monday – Friday: 10:00 AM – 6:00 PM<br>
+          Saturday: 10:00 AM – 3:00 PM<br>
+          Sunday: Closed
+        </p>
+        <p class="mt-4">
+          <strong>Phone:</strong> (123) 456-7890<br>
+          <strong>Email:</strong> support@printlab.com
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('footer-placeholder').innerHTML = data; })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

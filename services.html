@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PrintLab - Services</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Custom accordion button styling */
+    .btn-accordion {
+      color: #333;
+      font-size: 1.3rem;
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .btn-accordion:hover {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid #dee2e6;
+    }
+  </style>
+</head>
+<body>
+<div id="page-container">
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('navbar-placeholder').innerHTML = data; })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <div id="main-content" class="container-fluid p-0">
+    <div class="row no-gutters">
+      <div class="col-md-6 d-flex flex-column justify-content-center p-4 full-height">
+        <h2>Our 3D Printing Services</h2>
+        <p>We offer a range of services to suit all your 3D printing needs.</p>
+        <div class="container my-5">
+          <div id="servicesAccordion">
+            <div class="card">
+              <div class="card-header" id="headingFDM">
+                <h5 class="mb-0">
+                  <button class="btn btn-accordion" data-toggle="collapse" data-target="#collapseFDM" aria-expanded="false" aria-controls="collapseFDM">
+                    FDM (Plastic) Printing
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFDM" class="collapse" aria-labelledby="headingFDM" data-parent="#servicesAccordion">
+                <div class="card-body">
+                  <img src="images/fdm.jpg" alt="FDM Printing" class="img-fluid mb-3">
+                  <ul>
+                    <li>PLA: Starting at $0.10/gram</li>
+                    <li>ABS: Starting at $0.12/gram</li>
+                    <li>PETG: Starting at $0.13/gram</li>
+                    <li>TPU: Starting at $0.15/gram</li>
+                  </ul>
+                  <p><strong>Turnaround Time:</strong> 2–5 business days</p>
+                  <p><em>Description:</em> Our FDM printing process utilizes robust plastic materials ideal for rapid prototyping and functional parts. Perfect for creating durable prototypes and low-cost production parts.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingSLA">
+                <h5 class="mb-0">
+                  <button class="btn btn-accordion collapsed" data-toggle="collapse" data-target="#collapseSLA" aria-expanded="false" aria-controls="collapseSLA">
+                    SLA (Resin) Printing
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseSLA" class="collapse" aria-labelledby="headingSLA" data-parent="#servicesAccordion">
+                <div class="card-body">
+                  <img src="images/sla.jpg" alt="SLA Printing" class="img-fluid mb-3">
+                  <ul>
+                    <li>Standard Resin: Starting at $0.15/ml</li>
+                    <li>Tough Resin: Starting at $0.20/ml</li>
+                    <li>Castable Resin: Starting at $0.25/ml</li>
+                  </ul>
+                  <p><strong>Turnaround Time:</strong> 3–7 business days</p>
+                  <p><em>Description:</em> Our SLA printing process offers exceptional resolution and surface finish for intricate details. Choose from a variety of resins to match your project's functional and aesthetic needs.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingFinishing">
+                <h5 class="mb-0">
+                  <button class="btn btn-accordion collapsed" data-toggle="collapse" data-target="#collapseFinishing" aria-expanded="false" aria-controls="collapseFinishing">
+                    Finishing & Post-Processing
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFinishing" class="collapse" aria-labelledby="headingFinishing" data-parent="#servicesAccordion">
+                <div class="card-body">
+                  <img src="images/finishing.jpg" alt="Finishing & Post-Processing" class="img-fluid mb-3">
+                  <ul>
+                    <li>Sanding & Polishing</li>
+                    <li>Painting & Dyeing</li>
+                    <li>Assembly & Hardware Integration</li>
+                  </ul>
+                  <p><strong>Price:</strong> Custom Quote (depends on components and labor)</p>
+                  <p><strong>Note:</strong> Finishing steps may add 1–10 extra business days.</p>
+                  <p><em>Description:</em> Enhance the appearance and functionality of your prints with our finishing services. Our team can sand, polish, paint, or integrate hardware to give your project a professional touch.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingShipping">
+                <h5 class="mb-0">
+                  <button class="btn btn-accordion collapsed" data-toggle="collapse" data-target="#collapseShipping" aria-expanded="false" aria-controls="collapseShipping">
+                    Shipping & Delivery
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseShipping" class="collapse" aria-labelledby="headingShipping" data-parent="#servicesAccordion">
+                <div class="card-body">
+                  <p><strong>Domestic Shipping:</strong> Starts at $11.99</p>
+                  <p><strong>International Shipping:</strong> Available upon request</p>
+                  <p><strong>Local Pickup:</strong> Free</p>
+                  <p><em>Description:</em> We provide reliable shipping options to ensure your prints arrive on time and in perfect condition. Local pickup is also available for added convenience.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header" id="headingFormats">
+                <h5 class="mb-0">
+                  <button class="btn btn-accordion collapsed" data-toggle="collapse" data-target="#collapseFormats" aria-expanded="false" aria-controls="collapseFormats">
+                    File Formats & Recommendations
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseFormats" class="collapse" aria-labelledby="headingFormats" data-parent="#servicesAccordion">
+                <div class="card-body">
+                  <p>We accept STL, OBJ, and STEP files as standard.</p>
+                  <p>If you have another format, let us know and we’ll work with you.</p>
+                  <p>Not sure which material is best for your project? Contact our specialists for personalized recommendations—whether you need precision, durability, flexibility, or heat resistance.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 position-relative image-column">
+        <img src="images/services.jpg" alt="3D Printing Services" class="img-fluid w-100" style="object-fit: cover; height: auto;">
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('footer-placeholder').innerHTML = data; })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact - PrintLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Minimal inline style for demonstration */
+    .image-column img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="page-container">
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('navbar-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <div id="main-content" class="container-fluid p-0" style="min-height: 80vh;">
+    <div class="row no-gutters full-height">
+      <div class="col-md-6 position-relative image-column full-height">
+        <img src="images/contact.jpg" alt="Contact" class="img-fluid">
+      </div>
+
+      <div class="col-md-6 d-flex flex-column justify-content-center p-4 full-height location-text">
+        <h2>Contact Us</h2>
+        <p>
+          Have a question or special request? Fill out the form and our support team will respond
+          within 48 hours on business days.
+        </p>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Name</label>
+            <input type="text" class="form-control" id="contactName" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">Email Address</label>
+            <input type="email" class="form-control" id="contactEmail" placeholder="john.doe@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Subject</label>
+            <input type="text" class="form-control" id="contactSubject" placeholder="General Inquiry, Technical Support, etc.">
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Message</label>
+            <textarea class="form-control" id="contactMessage" rows="4" placeholder="Tell us how we can help you!"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-lg mt-3">Send Message</button>
+        </form>
+        <div class="position-absolute" style="bottom: 20px; left: 20px; color: #fff;">
+          <p style="font-size:0.8rem">Or, reach us directly for any pressing inquiries:</p>
+          <p style="font-size:0.7rem">Phone: (123) 456-7890</p>
+          <p style="font-size:0.7rem">Email: support@printlab.com</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

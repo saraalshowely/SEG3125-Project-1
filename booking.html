@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book a Consultation - PrintLab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="page-container">
+  <div id="navbar-placeholder"></div>
+  <script>
+    fetch('navbar.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('navbar-placeholder').innerHTML = data; })
+      .catch(error => console.error('Error loading navbar:', error));
+  </script>
+
+  <div id="main-content" class="container-fluid p-0" style="min-height:80vh;">
+    <div class="row no-gutters full-height">
+      <div class="col-md-6 position-relative image-column full-height">
+        <img src="images/booking.jpg" alt="Book a Consultation" class="img-fluid w-100 h-100" style="object-fit: cover;">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center p-4 full-height">
+        <h2>Book a Consultation</h2>
+        <p>
+          If you have a complex project or need personalized guidance, schedule a consultation with our experts.
+        </p>
+        <form id="bookingForm">
+          <div class="form-group">
+            <label for="bookName">Full Name</label>
+            <input type="text" class="form-control" id="bookName" placeholder="John Doe" required>
+          </div>
+          <div class="form-group">
+            <label for="bookEmail">Email Address</label>
+            <input type="email" class="form-control" id="bookEmail" placeholder="john.doe@example.com" required>
+          </div>
+          <div class="form-group">
+            <label for="bookDate">Preferred Date</label>
+            <input type="date" class="form-control" id="bookDate" required>
+          </div>
+          <div class="form-group">
+            <label for="bookTime">Preferred Time</label>
+            <input type="time" class="form-control" id="bookTime" required>
+          </div>
+          <div class="form-group">
+            <label for="bookDetails">Project Details</label>
+            <textarea class="form-control" id="bookDetails" rows="3" placeholder="Briefly describe your project"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark btn-lg mt-3">Confirm Booking</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-placeholder"></div>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => { document.getElementById('footer-placeholder').innerHTML = data; })
+      .catch(error => console.error('Error loading footer:', error));
+  </script>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
